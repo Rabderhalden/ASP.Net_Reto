@@ -4,13 +4,29 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>SeeList</title>
 </head>
 <body>
-    <H2>Spieler-Übersicht:</H2>
+<H2>Spieler-Übersicht:</H2>
+
+<table>
+    <tr>
+        <th>Vorname:</th>
+        <th>Nachname:</th>
+    </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+        <td>@item.vorname </td>
+        <td>@item.nachname</td>
+        </tr>
+    }
+    
+</table>
+<a href="/Home/Startseite">zur Startseite</a>
 </body>
 </html>

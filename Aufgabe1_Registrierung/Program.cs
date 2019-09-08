@@ -17,6 +17,8 @@ namespace Aufgabe1_Registrierung
         {
             CreateWebHostBuilder(args).Build().Run();
 
+
+
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

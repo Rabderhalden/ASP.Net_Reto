@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Aufgabe1_Registrierung.Models;
 using Microsoft.AspNetCore.Mvc;
 using Aufgabe1_Registrierung;
+using Aufgabe1_Registrierung.Data;
 
 
 namespace Aufgabe1_Registrierung.Controllers
@@ -16,12 +17,8 @@ namespace Aufgabe1_Registrierung.Controllers
         {
             Spieler newSpieler = new Spieler(){vorname = Vorname,email=Email, jahrgang = Jahrgang, nachname = Nachname,telefon = Telefon};
 
-            List<Spieler> spieler = new List<Spieler>();
 
-            spieler.Add(newSpieler);
-
-            ViewData.Model = spieler;
-
+            SpielerRepo.SpielerListe.Add(newSpieler);
 
             //ViewBag.Vorname = Vorname;
             //ViewBag.Nachname = Nachname;

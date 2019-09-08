@@ -7,6 +7,10 @@ namespace Aufgabe1_Registrierung.Models
 {
     public class Spieler
     {
+        public Spieler()
+        {
+        }
+
         private string _vorname;
         private string _nachname;
         private string _email;
