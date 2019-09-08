@@ -1,4 +1,5 @@
-﻿
+﻿@model Aufgabe1_Registrierung.Models.Spieler
+
 @{
     Layout = null;
 }
@@ -11,18 +12,36 @@
     <title>Vielen Dank!</title>
 </head>
 <body>
-<br>
-<H2>Spiel-Information:</H2>
-<br/>
-<p>Blaa, blaa,blaa..</p>
-<br/>
+    <H1>Vielen Dank!</H1>
+    <br>
+    <H2>Spiel-Information:</H2>
+    <br />
+    <p>Blaa, blaa,blaa..</p>
+    <br />
 <H1>Spielerdetails..</H1>
-<p>Name: @ViewBag.Nachname</p>
-<p>Vorname: @ViewBag.Vorname</p>
-<p>Mobile: @ViewBag.Telefon</p>
-<p>Email: @ViewBag.Email</p>
-<p>Jahrgang: @ViewBag.Jahrgang</p>
-<a href="/Home/Startseite">Startseite</a>
-<a href="/Registrierung/LoadFormular">Nächster Spieler erfassen</a>
+    
+<p>Vorname:</p>
+@Model.vorname
+<br>
+<p>Nachname:</p>
+@Model.nachname
+<br>
+@*<ul>
+    @foreach (var spieler in Model)
+    {
+        <li>@spieler.vorname @spieler.nachname @spieler.email</li>
+    }
+</ul>*@
+
+@*<p>Name: @ViewBag.Nachname</p>
+    <p>Vorname: @ViewBag.Vorname</p>
+    <p>Mobile: @ViewBag.Telefon</p>
+    <p>Email: @ViewBag.Email</p>
+    <p>Jahrgang: @ViewBag.Jahrgang</p>*@
+    <a href="/Home/Startseite">Startseite</a>
+    <br />
+    <a href="/Registrierung/LoadFormular">Nächster Spieler erfassen</a>
+    <br />
+    <a href="/SpielerListe/SeeListe">Nächster Spieler erfassen</a>
 </body>
 </html>
