@@ -1,32 +1,34 @@
 ﻿@model IEnumerable<Aufgabe1_Registrierung.Models.Spieler>
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Spieler-Liste";
 }
 
 <!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>SeeList</title>
-</head>
-<body>
-<H2>Spieler-Übersicht:</H2>
 
-<table>
-    <tr>
-        <th>Vorname:</th>
-        <th>Nachname:</th>
-    </tr>
-    
-    @foreach (var item in Model)
-    {
+    <H2>Spieler-Übersicht:</H2>
+
+    <table>
         <tr>
-        <td>@item.vorname </td>
-        <td>@item.nachname</td>
+            <th>Vorname:</th>
+            <th>Nachname:</th>
         </tr>
-    }
-    
-</table>
-<a href="/Home/Startseite">zur Startseite</a>
-</body>
-</html>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.vorname </td>
+                <td>@item.nachname</td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    <h2>Suche Spieler:</h2>
+    <form action="/SpielerListe/Search" method="get">
+        <input type="text" name="Begriff" />
+        <input type="submit" value="Search" />
+    </form>
+    <br />
+    <a href="/Home/Startseite">zur Startseite</a>
+

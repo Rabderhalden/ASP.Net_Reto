@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+<table border="1" style="width:800px">
+    <tr>
+        <td colspan="2" style="text-align: center">
+            <h3>Spiel - Portal</h3>
+        </td>
+    </tr>    
+    <tr>
+        <td style="width:200px">
+
+            <ul>
+                <li><a href="/Home/Startseite">Home</a></li>
+                <li><a href="/Registrierung/LoadFormular">Registrierung</a></li>
+                <li><a href="/SpielerDetail/SeeSpieler">Details</a></li>
+                <li><a href="/SpielerListe/SeeList">Spieler-Liste</a></li>
+            </ul>
+        </td>
+        <td style="width:600px">@RenderBody()</td>
+
+    </tr>    
+    <tr>
+        <td colspan="2" style="text-align: center">
+            <h4>©2019 Reto Abderhalden</h4>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
