@@ -1,38 +1,44 @@
 ﻿<!DOCTYPE html>
 
 <html>
+<environment names="Development">
+    <link href="~/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</environment>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <table border="1" style="width:1200px">
+        <tr>
+            <td colspan="2" style="width:300px">
+                <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+                    <ul class="nav">
+                        <li class="nav">@Html.ActionLink("Startseite", "Startseite", "Home",null, new { @class = "nav-link" })</li>
+                        <li class="nav">@Html.ActionLink("Registrierung", "LoadFormular", "Registrierung", null, new { @class = "nav-link" })</li>
+                        <li class="nav">@Html.ActionLink("Details", "SeeSpieler", "SpielerDetail", null, new { @class = "nav-link" })</li>
+                        <li class="nav">@Html.ActionLink("Spieler-Liste", "SeeList", "SpielerListe", null, new { @class = "nav-link" })</li>
 
-<table border="1" style="width:800px">
-    <tr>
-        <td colspan="2" style="text-align: center">
-            <h3>Spiel - Portal</h3>
-        </td>
-    </tr>    
-    <tr>
-        <td style="width:200px">
+                    </ul>
+                </nav>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center">
+                <h3>Spiel - Portal</h3>
+            </td>
+        </tr>
 
-            <ul>
-
-                <li>@Html.ActionLink("Startseite","Startseite","Home")</li>
-                <li>@Html.ActionLink("Registrierung","LoadFormular","Registrierung")</li>
-                <li>@Html.ActionLink("Details","SeeSpieler","SpielerDetail")</li>
-                <li>@Html.ActionLink("Spieler-Liste","SeeList","SpielerListe")</li>
-
-            </ul>
-        </td>
-        <td style="width:600px">@RenderBody()</td>
-
-    </tr>    
-    <tr>
-        <td colspan="2" style="text-align: center">
-            <h4>©2019 Reto Abderhalden</h4>
-        </td>
-    </tr>
-</table>
+        <tr>
+            <td style="height:450px" >@RenderBody()</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center">
+                <h4>©2019 Reto Abderhalden</h4>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
