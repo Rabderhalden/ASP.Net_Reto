@@ -17,12 +17,11 @@ namespace Aufgabe1_Registrierung.Controllers
             return View(SpielerRepo.SpielerListe);
         }
 
-        public ActionResult Search(string Begriff)
+        public ActionResult Search(string search)
         {
-
+            ViewBag.Spielerliste = new SelectList(SpielerRepo.SpielerListe, "vorname", "nachname");
             //var spieler = SpielerRepo.SpielerListe.Where(a => a.vorname.StartsWith(begriff)).Take(10);
-            return View();
+            return View(SpielerRepo.SpielerListe.Where(a=>a.vorname.StartsWith(search)).ToList());
         }
-
     }
 }

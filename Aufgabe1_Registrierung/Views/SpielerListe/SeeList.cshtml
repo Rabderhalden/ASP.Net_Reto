@@ -25,10 +25,13 @@
     </table>
     <br />
     <h2>Suche Spieler:</h2>
-    <form action="/SpielerListe/Search" method="get">
-        <input type="text" name="Begriff" />
-        <input type="submit" value="Search" />
-    </form>
-    <br />
-    <a href="/Home/Startseite">zur Startseite</a>
+<p>
+    @using (Html.BeginForm("Search","SpielerListe",FormMethod.Get))
+    {
+        <b>Suche:</b>
+        @Html.TextBox("search")<input type="submit" value="Search"/>
+    }
+</p>
+
+    @*<a href="/Home/Startseite">zur Startseite</a>*@
 

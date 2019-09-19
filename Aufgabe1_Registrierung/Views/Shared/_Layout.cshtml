@@ -17,10 +17,12 @@
         <td style="width:200px">
 
             <ul>
-                <li><a href="/Home/Startseite">Home</a></li>
-                <li><a href="/Registrierung/LoadFormular">Registrierung</a></li>
-                <li><a href="/SpielerDetail/SeeSpieler">Details</a></li>
-                <li><a href="/SpielerListe/SeeList">Spieler-Liste</a></li>
+
+                <li>@Html.ActionLink("Startseite","Startseite","Home")</li>
+                <li>@Html.ActionLink("Registrierung","LoadFormular","Registrierung")</li>
+                <li>@Html.ActionLink("Details","SeeSpieler","SpielerDetail")</li>
+                <li>@Html.ActionLink("Spieler-Liste","SeeList","SpielerListe")</li>
+
             </ul>
         </td>
         <td style="width:600px">@RenderBody()</td>

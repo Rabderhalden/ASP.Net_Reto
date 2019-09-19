@@ -1,4 +1,4 @@
-﻿@model Aufgabe1_Registrierung.Models.Spieler
+﻿@model IEnumerable<Aufgabe1_Registrierung.Models.Spieler>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Suche";
@@ -6,15 +6,23 @@
 
 <!DOCTYPE html>
 
-    // hier die Auflistung der Spieler abbilden
+<H1>Gefundene Spieler:</H1>
 
-    <H1>Gefundene Spieler:</H1>
+<table>
+    <tr>
+        <th>Vorname:</th>
+        <th>Nachname:</th>
+    </tr>
 
-    <table>
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>Vorname:</th>
-            <th>Nachname:</th>
+            <td>@item.vorname </td>
+            <td>@item.nachname</td>
         </tr>
-
-    </table>
+    }
+</table>
+<br />
+<br />
+@Html.DropDownList("Spielerliste","Wähle Spieler")
 
